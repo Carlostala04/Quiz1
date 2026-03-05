@@ -8,6 +8,7 @@ function CardCharacter({
   origen,
   urlImage,
   creacion,
+  localation
 }) {
   const getDate =
     new Date(creacion).getDay() +
@@ -25,6 +26,7 @@ function CardCharacter({
         <span className="character-status">Status: {status}</span>
         <span className="character-especie">Species: {especie}</span>
         <span className="character-gender">Gender: {gender}</span>
+        <span className="character-localation">Localation: {localation}</span>
         <span className="character-origen">Origin: {origen}</span>
         <span>Date created: {getDate}</span>
       </section>
