@@ -17,6 +17,7 @@ function CardCharacter({
     "-" +
     new Date(creacion).getFullYear();
   return (
+    
     <div className="card">
       <section className="character-img">
         <img src={`${urlImage}`} alt={`imagen de ${nombre}`} />

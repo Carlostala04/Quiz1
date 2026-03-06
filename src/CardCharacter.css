@@ -9,6 +9,7 @@
   position: relative;
   width: min(90vw, 320px);
   min-height: 520px;
+  height: 900px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
