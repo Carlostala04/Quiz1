@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useRickAndMorty from "./hooks/UseRickAndMorty";
+import LoadingSpinner from "./LoadingSpinner";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -12,7 +13,7 @@ function App() {
         placeholder="Buscar personaje..."
         onChange={(e) => setSearch(e.target.value)}
       />
-      {loading && <p>Cargando...</p>}
+      {loading && <LoadingSpinner message="Cargando personajes..." />}
       {error && <p>{error}</p>}
     </div>
   );
