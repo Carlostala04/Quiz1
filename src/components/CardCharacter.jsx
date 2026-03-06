@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/CardCharacter.css";
+import "../CardCharacter.css";
 function CardCharacter({
   nombre,
   status,
