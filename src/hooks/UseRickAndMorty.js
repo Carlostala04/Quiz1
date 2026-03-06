@@ -10,9 +10,17 @@ const useRickAndMorty = (search) => {
     setError(null);
 
     fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("No se encontraron personajes");
+        return res.json();
+      })
       .then((data) => {
         setCharacters(data.results);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setCharacters([]);
         setLoading(false);
       });
   }, [search]);
@@ -21,4 +29,3 @@ const useRickAndMorty = (search) => {
 };
 
 export default useRickAndMorty;
-
