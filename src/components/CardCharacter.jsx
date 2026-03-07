@@ -8,8 +8,25 @@ function CardCharacter({
   origen,
   urlImage,
   creacion,
-  localation
+  localation,
 }) {
+  //se crea el map con la clave (nombres de personajes) y su valor (color distintivo)
+  const colorMap = {
+    rick: "#3B82F6",
+    morty: "#EAB308",
+    summer: "#EC4899",
+    jerry: "#024105",
+    beth: "rgba(255, 102, 102, 0.87)",
+  };
+  //creamos una funcion que recibe como parametro el nombre del personaje
+  //creamos una constante que almacena el nombre en minuscula
+  //creamos otra constante que contenga el la coincidencia entre la llave y el nombre
+  //retornamos el color que coincida con el personaje, por defecto el color que tomara si el personaje no existe es verde
+  const getBorderColor = (name) => {
+    const lowerName = name.toLowerCase();
+    const match = Object.keys(colorMap).find((key) => lowerName.includes(key));
+    return match ? colorMap[match] : "#adff57";
+  };
   const getDate =
     new Date(creacion).getDay() +
     "-" +
@@ -17,8 +34,10 @@ function CardCharacter({
     "-" +
     new Date(creacion).getFullYear();
   return (
-    
-    <div className="card">
+    <div
+      style={{ border: `3px solid ${getBorderColor(nombre)}` }}
+      className="card"
+    >
       <section className="character-img">
         <img src={`${urlImage}`} alt={`imagen de ${nombre}`} />
       </section>
