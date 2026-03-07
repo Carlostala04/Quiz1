@@ -1,6 +1,6 @@
 @font-face {
   font-family: "shlop";
-  src: url("../assets/fonts/shlop rg.otf") format("opentype");
+  src: url("./assets/Fonts/shlop/rg.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
@@ -18,7 +18,6 @@
     linear-gradient(rgba(10, 24, 10, 0.55), rgba(13, 39, 18, 0.75)),
     url("../assets/portal-gif.gif") center/cover no-repeat;
   font-family: "shlop", "Trebuchet MS", sans-serif;
-  border: 3px solid #adff57;
   border-radius: 18px;
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.35),
